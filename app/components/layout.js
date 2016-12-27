@@ -1,6 +1,8 @@
  
  import React from 'react'
-
+ import Header from './header'
+ import Footer from './footer'
+ import StopWatch from './stopwatch'
  export default class Layout extends React.Component{
 
     constructor(){
@@ -8,9 +10,12 @@
     }
 
     render(){
+
         return (
             <div className="container">
-                <h1>Main Layout</h1>
+                <Header/>
+                   <StopWatch/> 
+                <Footer/>
             </div>
         )
     }
