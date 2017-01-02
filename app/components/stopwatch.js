@@ -6,7 +6,8 @@
             super();
             this.state = {
                 milli_second:0,
-                second:0
+                second:0,
+                is_start:false
             }
             this.timer = undefined;
         }
@@ -24,7 +25,7 @@
                 <hr/>
                 <div class="col-md-6 col-md-offset-3">
                     <div class="col-sm-2">
-                        <button class="btn btn-success" onClick={this.startWatch.bind(this)}>Start</button>
+                          <button class="btn btn-success" onClick={this.startWatch.bind(this)}>Start</button>
                     </div>
                     <div class="col-sm-2">
                         <button class="btn btn-info" onClick={this.pauseWatch.bind(this)}>Pause</button>
@@ -41,6 +42,7 @@
 
 
        startWatch(){
+           this.setState({is_start:true})
            this.timer = setInterval(()=>{
                 var tsec = 0;
                 if(this.state.milli_second > 60){
