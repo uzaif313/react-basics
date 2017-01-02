@@ -25,12 +25,14 @@
                 <hr/>
                 <div class="col-md-6 col-md-offset-3">
                     <div class="col-sm-2">
-                          <button class="btn btn-success" onClick={this.startWatch.bind(this)}>Start</button>
+                          {
+                           this.state.is_start ?
+                           <button class="btn btn-info" onClick={this.pauseWatch.bind(this)}>Pause</button>
+                          :
+                           <button class="btn btn-success" onClick={this.startWatch.bind(this)}> {this.state.second > 0 || this.milli_second > 0 ? "Resume" : "Start"}</button>
+                          }
                     </div>
-                    <div class="col-sm-2">
-                        <button class="btn btn-info" onClick={this.pauseWatch.bind(this)}>Pause</button>
-                    </div>
-                    <div class="col-sm-2">
+                   <div class="col-sm-2">
                       <button class="btn btn-danger" onClick={this.reset.bind(this)}>Reset</button>
                     </div>
                 </div>
@@ -57,12 +59,13 @@
         }
 
         pauseWatch(){
+          this.setState({is_start:false})
           clearInterval(this.timer)
         }
 
         reset(){
           clearInterval(this.timer)
-          this.setState({milli_second:0,second:0})
+          this.setState({milli_second:0,second:0,is_start:false})
         }
 
     }
