@@ -1,31 +1,29 @@
     import React from 'react'
-
+    import {Link} from 'react-router'
     export default class Header extends React.Component{
 
         render(){
             return(
-		<nav className="navbar navbar-default">
-		  <div className="container-fluid">
-			<div className="navbar-header">
-		  	<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span className="sr-only">Toggle navigation</span>
-				<span className="icon-bar"></span>
-				<span className="icon-bar"></span>
-				<span className="icon-bar"></span>
-		  	</button>
-		  	<a className="navbar-brand" href="#">React Rocks</a>
-			</div>
+              <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">ReactRock</a>
+                  </div>
 
-			<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  	<ul className="nav navbar-nav">
-				<li className="active"><a href="#">Stopwatch <span className="sr-only">(current)</span></a></li>
-				<li><a href="#">Link</a></li>
-			</ul>
-
-		</div>
-	  </div>
-	</nav>
-
-);
+                  <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><Link to="/">StopWatch</Link><span class="sr-only">(current)</span></li>
+                      <li><Link to="contact">Contact</Link></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            );
         }
     }
